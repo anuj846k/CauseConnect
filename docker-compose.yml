@@ -1,0 +1,65 @@
+version: "3.8"
+
+services:
+  db:
+    image: mongo:6.0
+    container_name: app_db
+    environment:
+      MONGO_INITDB_ROOT_USERNAME: root
+      MONGO_INITDB_ROOT_PASSWORD: rootpassword
+      MONGO_INITDB_DATABASE: appdb
+    ports:
+      - "27017:27017"
+    volumes:
+      - db_data:/data/db
+    networks:
+      - app_network
+
+  mongo-express:
+    image: mongo-express:latest
+    container_name: mongo_express
+    environment:
+      ME_CONFIG_MONGODB_ADMINUSERNAME: root
+      ME_CONFIG_MONGODB_ADMINPASSWORD: rootpassword
+      ME_CONFIG_MONGODB_SERVER: db
+    ports:
+      - "8081:8081"
+    depends_on:
+      - db
+    networks:
+      - app_network
+
+  backend:
+    build: ./backend
+    container_name: app_backend
+    ports:
+      - "5000:5000"
+    volumes:
+      - ./backend:/usr/src/app
+      - /usr/src/app/node_modules # Ensure node_modules isn't overwritten
+    env_file:
+      - ./backend/.env
+    depends_on:
+      - db
+    networks:
+      - app_network
+
+  frontend:
+    build: ./frontend
+    container_name: app_frontend
+    ports:
+      - "5173:5173" # Frontend port for hot-reloading (Vite for example)
+    volumes:
+      - ./frontend:/usr/src/app
+      - /usr/src/app/node_modules # Ensure node_modules isn't overwritten
+    depends_on:
+      - backend
+    networks:
+      - app_network
+
+volumes:
+  db_data:
+
+networks:
+  app_network:
+    driver: bridge

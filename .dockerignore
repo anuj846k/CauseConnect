@@ -1,0 +1,25 @@
+# Ignore node_modules (as it's handled by volumes)
+node_modules
+
+# Ignore log files
+*.log
+
+# Ignore Docker-related files
+.dockerignore
+Dockerfile
+
+# Ignore development tools and configurations
+.vscode/
+.idea/
+
+# Ignore backend and frontend build directories (already built in the container)
+backend/dist/
+frontend/dist/
+
+# Ignore environment files (these should be passed explicitly via env_file or environment variables)
+*.env
+
+# Ignore other files that shouldn't be in the container
+*.md
+.git/
+.gitignore
