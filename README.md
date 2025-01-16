@@ -4,7 +4,19 @@ Cause Connect is a web application that helps users find and connect with volunt
 
 YouTube link - https://youtu.be/loH2dCFAVb4?si=GHSRxwNOKR0hLQfx
 
+
 ![Community drive](image.png)
+
+![Volunteer Events Near you](https://github.com/user-attachments/assets/d2c1ae07-db99-4c21-998e-b60582ef354d)
+
+![LeaderBoard](https://github.com/user-attachments/assets/5a6b50a3-e2d3-4828-bdef-07881e1cf80e)
+
+
+![image](https://github.com/user-attachments/assets/71a86f13-4f6e-4f11-a150-9d99b3c222e5)
+
+
+
+
 
 ## Table of Contents
 1. [Features](#features)
