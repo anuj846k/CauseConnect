@@ -1,5 +1,6 @@
 import React from 'react';
 import { Card } from "@/components/ui/card";
+import bgImage from '../assets/bg.jpg';
 import { 
   Heart, 
   Users, 
@@ -60,192 +61,128 @@ const AboutUs = () => {
     "Mobile-first design for on-the-go volunteering"
   ];
 
-  const pricingPlans = [
-    {
-      name: "Free",
-      icon: Heart,
-      price: "0",
-      description: "Perfect for individual volunteers",
-      features: [
-        "Basic volunteer profile",
-        "Search and apply to opportunities",
-        "Track volunteer hours",
-        "Basic impact reporting",
-        "Community access"
-      ],
-      limitations: [
-        "Limited applications per month",
-        "Standard support",
-        "Basic analytics",
-        "No custom branding",
-        "No API access"
-      ]
-    },
-    {
-      name: "Pro",
-      icon: Shield,
-      price: "29",
-      description: "For dedicated organizations",
-      features: [
-        "Everything in Free, plus:",
-        "Custom organization profile",
-        "Post unlimited opportunities",
-        "Advanced volunteer matching",
-        "Priority support",
-        "Custom impact reports",
-        "Volunteer management tools"
-      ],
-      limitations: [
-        "Limited API access",
-        "Basic integration options",
-        "Standard branding options"
-      ]
-    },
-    {
-      name: "Enterprise",
-      icon: Rocket,
-      price: "Custom",
-      description: "For large organizations and corporations",
-      features: [
-        "Everything in Pro, plus:",
-        "Unlimited everything",
-        "Custom branding",
-        "API access",
-        "Advanced analytics",
-        "Dedicated support",
-        "Custom integrations",
-        "Corporate volunteering tools",
-        "Multi-organization management"
-      ],
-      limitations: []
-    }
-  ];
-
   const PricingCard = ({ plan }) => (
-    <Card className="p-6 flex flex-col h-full hover:shadow-lg transition-shadow">
+    <Card className="p-6 flex flex-col h-full hover:shadow-2xl transition-all transform hover:scale-105">
       <div className="text-center mb-6">
-        <div className="inline-block p-3 bg-blue-50 rounded-full mb-4">
-          <plan.icon className="w-8 h-8 text-blue-600" />
+        <div className="inline-block p-3 bg-gradient-to-r from-pink-500 to-purple-600 text-white rounded-full mb-4">
+          <plan.icon className="w-8 h-8 text-white" />
         </div>
-        <h3 className="text-2xl font-bold text-blue-900 mb-2">{plan.name}</h3>
+        <h3 className="text-2xl font-semibold text-gray-900 mb-2">{plan.name}</h3>
         <div className="flex items-center justify-center mb-2">
           <span className="text-gray-600 text-lg">$</span>
-          <span className="text-4xl font-bold text-blue-900 mx-1">{plan.price}</span>
+          <span className="text-4xl font-bold text-gray-900 mx-1">{plan.price}</span>
           {plan.price !== "Custom" && <span className="text-gray-600">/month</span>}
         </div>
-        <p className="text-gray-600">{plan.description}</p>
+        <p className="text-gray-700">{plan.description}</p>
       </div>
 
       <div className="flex-grow">
         <div className="mb-6">
-          <h4 className="font-semibold text-blue-900 mb-3">Features</h4>
+          <h4 className="font-semibold text-gray-900 mb-3">Features</h4>
           <ul className="space-y-2">
             {plan.features.map((feature) => (
               <li key={feature} className="flex items-start">
-                <CheckCircle className="w-5 h-5 text-green-500 flex-shrink-0 mt-0.5 mr-2" />
-                <span className="text-gray-600">{feature}</span>
+                <CheckCircle className="w-5 h-5 text-teal-500 flex-shrink-0 mt-0.5 mr-2" />
+                <span className="text-gray-700">{feature}</span>
               </li>
             ))}
           </ul>
         </div>
-
-        {plan.limitations.length > 0 && (
-          <div>
-            <h4 className="font-semibold text-blue-900 mb-3">Limitations</h4>
-            <ul className="space-y-2">
-              {plan.limitations.map((limitation) => (
-                <li key={limitation} className="flex items-start">
-                  <X className="w-5 h-5 text-red-400 flex-shrink-0 mt-0.5 mr-2" />
-                  <span className="text-gray-600">{limitation}</span>
-                </li>
-              ))}
-            </ul>
-          </div>
-        )}
       </div>
 
-      <button className="mt-6 w-full px-6 py-3 rounded-lg bg-blue-600 text-white hover:bg-blue-700 transition-colors flex items-center justify-center">
+      <button className="mt-6 w-full px-6 py-3 rounded-lg bg-gradient-to-r from-pink-500 to-purple-600 text-white hover:from-pink-600 hover:to-purple-700 transition-all flex items-center justify-center">
         Get Started <ArrowRight className="ml-2 w-5 h-5" />
       </button>
     </Card>
   );
 
   return (
-    <div className="max-w-6xl mx-auto px-4 py-12">
-      {/* Hero Section */}
-      <div className="text-center mb-16">
-        <h1 className="text-4xl font-bold text-blue-900 mb-4">
-          Connecting Hearts, Creating Impact
-        </h1>
-        <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-          We're on a mission to make volunteering accessible, meaningful, and 
-          impactful for everyone. Join us in creating positive change in 
-          communities around the world.
-        </p>
-      </div>
-
-      {/* Stats Section */}
-      <Card className="p-8 mb-16">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-          {stats.map(({ icon: Icon, value, label }) => (
-            <div key={label} className="text-center">
-              <Icon className="w-8 h-8 text-blue-500 mx-auto mb-2" />
-              <div className="text-3xl font-bold text-blue-900 mb-1">{value}</div>
-              <div className="text-gray-600">{label}</div>
-            </div>
-          ))}
-        </div>
-      </Card>
-
-      {/* Our Values Section */}
-      <div className="mb-16">
-        <h2 className="text-3xl font-bold text-blue-900 text-center mb-12">
-          Our Values
-        </h2>
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-          {values.map(({ icon: Icon, title, description }) => (
-            <Card key={title} className="p-6 text-center hover:shadow-lg transition-shadow">
-              <Icon className="w-12 h-12 text-blue-500 mx-auto mb-4" />
-              <h3 className="text-xl font-semibold text-blue-900 mb-2">{title}</h3>
-              <p className="text-gray-600">{description}</p>
-            </Card>
-          ))}
-        </div>
-      </div>
-
-      {/* Features Section */}
-      <Card className="p-8 mb-16 bg-gradient-to-br from-blue-50 to-white">
-        <div className="max-w-3xl mx-auto">
-          <h2 className="text-3xl font-bold text-blue-900 text-center mb-8">
-            Built for Modern Volunteering
-          </h2>
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-            {features.map((feature) => (
-              <div key={feature} className="flex items-start space-x-2">
-                <CheckCircle2 className="w-5 h-5 text-green-500 flex-shrink-0 mt-1" />
-                <span className="text-gray-700">{feature}</span>
-              </div>
-            ))}
+    <div
+      className="bg-cover bg-fixed bg-center min-h-screen"
+      style={{
+        backgroundImage: "url('https://media.istockphoto.com/id/1252584401/vector/heart-and-hands-painting.jpg?s=612x612&w=0&k=20&c=tcOGpdSUJkI_Uv9kcWVHnlzuiqrJZcufGRXrkgWO6_U=')",
+      }}
+    >
+      <div className="bg-white bg-opacity-80">
+        <div className="max-w-6xl mx-auto px-4 py-12">
+          {/* Hero Section */}
+          <div className="text-center mb-16 py-20">
+            <h1 className="text-4xl font-extrabold tracking-tight text-blue-900 sm:text-xl md:text-6xl lg:text-7xl drop-shadow-md">
+              Connecting Hearts, Creating Impact
+            </h1>
+            <p className="text-2xl text-blue-900 max-w-3xl mx-auto">
+              We're on a mission to make volunteering accessible, meaningful, and impactful for everyone. Join us in creating positive change in communities around the world.
+            </p>
           </div>
-        </div>
-      </Card>
 
-      {/* Pricing Section */}
-      <div className="mb-16">
-        <h2 className="text-3xl font-bold text-blue-900 text-center mb-4">
-          Pricing Plans
-        </h2>
-        <p className="text-xl text-gray-600 text-center max-w-3xl mx-auto mb-12">
-          Choose the plan that best fits your organization's needs. All plans include our core features to help you make a difference.
-        </p>
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-          {pricingPlans.map((plan) => (
-            <PricingCard key={plan.name} plan={plan} />
-          ))}
-        </div>
-      </div>
+          {/* Stats Section */}
+          <Card className="p-8 mb-16 bg-gradient-to-br from-blue-400 to-purple-300 rounded-xl shadow-xl">
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+              {stats.map(({ icon: Icon, value, label }) => (
+                <div
+                  key={label}
+                  className="text-center p-6 bg-white rounded-lg shadow-lg transition-all transform hover:scale-105"
+                >
+                  <Icon className="w-8 h-8 text-indigo-600 mx-auto mb-2" />
+                  <div className="text-3xl font-bold text-indigo-800 mb-1">{value}</div>
+                  <div className="text-gray-600">{label}</div>
+                </div>
+              ))}
+            </div>
+          </Card>
 
+          {/* Our Values Section */}
+          <div className="mb-16">
+  <h2 className="text-3xl font-bold text-center mb-12 text-gray-700">
+    Our Values
+  </h2>
+  <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+    {values.map(({ icon: Icon, title, description }, index) => {
+      const bgColors = ["bg-pink-100", "bg-blue-100", "bg-green-100", "bg-yellow-100"]; // Array of light background colors
+      const bgColor = bgColors[index % bgColors.length]; // Rotate through colors if more than 4 values
+      return (
+        <Card
+          key={title}
+          className={`p-6 text-center hover:shadow-lg transition-all hover:scale-105 ${bgColor}`} // Apply the background color here
+        >
+          <Icon className="w-12 h-12 text-pink-500 mx-auto mb-4" />
+          <h3 className="text-xl font-semibold text-indigo-900 mb-2">{title}</h3>
+          <p className="text-gray-700">{description}</p>
+        </Card>
+      );
+    })}
+  </div>
+</div>
+
+          {/* Features Section */}
+<Card className="relative p-8 mb-16 bg-gradient-to-br from-yellow-300 to-yellow-90 rounded-xl shadow-xl overflow-hidden">
+  {/* Background Image */}
+  <img 
+    src={bgImage}
+    alt="Volunteering Doodle"
+    className="absolute bottom-0 right-0 w-48 opacity-90 pointer-events-none"
+  />
+
+  {/* Main Content */}
+  <div className="relative z-10 max-w-3xl mx-auto">
+    <h2 className="text-3xl font-bold text-indigo-900 text-center mb-8">
+      Built for Modern Volunteering
+    </h2>
+    <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+      {features.map((feature) => (
+        <div key={feature} className="flex items-start space-x-2">
+          <CheckCircle2 className="w-5 h-5 text-teal-500 flex-shrink-0 mt-1" />
+          <span className="text-gray-700">{feature}</span>
+        </div>
+      ))}
+    </div>
+  </div>
+</Card>
+
+        </div>
+      
       {/* CTA Section */}
+      <div className='p-9'>
       <div className="text-center">
         <h2 className="text-3xl font-bold text-blue-900 mb-6">
           Ready to Make a Difference?
@@ -254,14 +191,14 @@ const AboutUs = () => {
           Join our community of changemakers and start your volunteering journey today.
         </p>
         <div className="flex flex-col sm:flex-row gap-4 justify-center">
-          <Link to='/events' className="inline-flex items-center px-6 py-3 rounded-lg bg-blue-600 text-white hover:bg-blue-700 transition-colors">
-            Find Opportunities <ArrowRight className="ml-2 w-5 h-5" />
+          <Link to='/events' className="bg-yellow-400 text-blue-900 font-bold text-lg sm:text-l py-3 px-3 rounded-lg shadow-lg hover:bg-yellow-300 transition duration-300 focus:outline-none focus:ring-2 focus:ring-yellow-500 focus:ring-opacity-50">
+            Find Opportunities 
           </Link>
-          <button className="inline-flex items-center px-6 py-3 rounded-lg border-2 border-blue-600 text-blue-600 hover:bg-blue-50 transition-colors">
-            Partner With Us <Building2 className="ml-2 w-5 h-5" />
-          </button>
         </div>
+        
       </div>
+      </div>
+    </div>
     </div>
   );
 };
