@@ -7,7 +7,7 @@ interface EventDialogProps {
 const EventDialog: React.FC<EventDialogProps> = (id) => {
   const [isDialogOpen, setDialogOpen] = useState(false);
   const [isCopied, setIsCopied] = useState(false);
-  const [refferalRoute,setRefferalRoute] = useState("http://localhost:5173/events/");
+  const [refferalRoute,setRefferalRoute] = useState("https://cause-connect-flax.vercel.app//events/");
   const handleCopy = (text: string,text_1:string) => {
     const event_link = text.concat(text_1);
     navigator.clipboard.writeText(event_link);

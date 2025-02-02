@@ -13,7 +13,7 @@ const VolunteerPage = () => {
     const fetchEventDetails = async () => {
       try {
         const response = await axios.get(
-          `http://localhost:5000/api/events/${id}`,
+          `https://causeconnect-dgu1.onrender.com//api/events/${id}`,
           { withCredentials: true }
         );
         setEventDetails(response.data.data);

@@ -89,7 +89,7 @@ Create a .env file in the root of the backend folder and add the following varia
    ```bash
    cd ../Frontend
    npm run dev 
-3. Open [http://localhost:5173](http://localhost:5173) in your browser to view the app.
+3. Open [https://cause-connect-flax.vercel.app/](https://cause-connect-flax.vercel.app/) in your browser to view the app.
       
 ## Future Improvements
 

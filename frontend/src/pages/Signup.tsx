@@ -1,4 +1,4 @@
-// http://localhost:5000/api/users/signup 
+// https://causeconnect-dgu1.onrender.com//api/users/signup 
 // route for signup
 
 // import React, { useState } from 'react';
@@ -17,7 +17,7 @@
 //   const handleSignup = async (e: React.FormEvent) => {
 //     e.preventDefault();
 //     try {
-//       const response = await axios.post('http://localhost:5000/api/users/signup', {
+//       const response = await axios.post('https://causeconnect-dgu1.onrender.com//api/users/signup', {
 //         username,
 //         email,
 //         password,
@@ -136,7 +136,7 @@ const Signup: React.FC = () => {
     e.preventDefault();
     try {
       const response = await axios.post(
-        'http://localhost:5000/api/users/signup',
+        'https://causeconnect-dgu1.onrender.com//api/users/signup',
         { username, email, password, role }
       );
 
