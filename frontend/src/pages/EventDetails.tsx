@@ -21,7 +21,7 @@ const EventDetails = () => {
     const fetchEventStats = async () => {
       try {
         const response = await axios.get(
-          `https://causeconnect-dgu1.onrender.com//api/events/${id}`,
+          `https://causeconnect-dgu1.onrender.com/api/events/${id}`,
           {
             withCredentials: true,
           }

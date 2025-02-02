@@ -62,7 +62,7 @@ const Dashboard = () => {
         if (userToken) {
           const decodedToken: any = jwtDecode(userToken);
           setUserId(decodedToken?.userId);
-          const response = await fetch("https://causeconnect-dgu1.onrender.com//api/users/curr", {
+          const response = await fetch("https://causeconnect-dgu1.onrender.com/api/users/curr", {
             method: "POST",
             headers: {
               Authorization: `Bearer ${userToken}`,

@@ -56,7 +56,7 @@ const EventLists = () => {
   useEffect(() => {
     const getAllEvents = async () => {
       try {
-        const res = await axios.get("https://causeconnect-dgu1.onrender.com//api/events", {
+        const res = await axios.get("https://causeconnect-dgu1.onrender.com/api/events", {
           withCredentials: true,
         });
         setEvents(res.data.data);
@@ -228,7 +228,7 @@ const EventLists = () => {
                   <img
                     src={
                       event.image
-                        ? `https://causeconnect-dgu1.onrender.com//uploads/${event.image.split('/').pop()}`
+                        ? `https://causeconnect-dgu1.onrender.com/uploads/${event.image.split('/').pop()}`
                         : "https://img.freepik.com/premium-photo/world-charity-day-backgrounds_1198941-10278.jpg?w=740"
                     }
                     alt={event?.title}

@@ -18,7 +18,7 @@ const VolunteerList = ({ eventId }) => {
     const fetchVolunteers = async () => {
       try {
         const response = await axios.get(
-          `https://causeconnect-dgu1.onrender.com//api/events/${eventId}/volunteer`,
+          `https://causeconnect-dgu1.onrender.com/api/events/${eventId}/volunteer`,
           { withCredentials: true }
         );
         setVolunteers(response.data.data);

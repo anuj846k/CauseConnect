@@ -1,4 +1,4 @@
-// https://causeconnect-dgu1.onrender.com//api/users/login
+// https://causeconnect-dgu1.onrender.com/api/users/login
 // route for login
 
 import React, { useState } from 'react';
@@ -18,7 +18,7 @@ const Login: React.FC = () => {
     e.preventDefault();
     try {
       const response = await axios.post(
-        'https://causeconnect-dgu1.onrender.com//api/users/login',
+        'https://causeconnect-dgu1.onrender.com/api/users/login',
         { username, password },
         { withCredentials: true }
       );

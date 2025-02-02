@@ -63,7 +63,7 @@ const VolunteerForm = ({ eventId, isOpen, onClose, eventTitle }: VolunteerFormPr
 
     try {
       const response = await axios.post(
-        `https://causeconnect-dgu1.onrender.com//api/events/${eventId}/volunteer`,
+        `https://causeconnect-dgu1.onrender.com/api/events/${eventId}/volunteer`,
         formData,
         { withCredentials: true }
       )

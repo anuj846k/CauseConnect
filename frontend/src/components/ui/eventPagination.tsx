@@ -19,7 +19,7 @@ const PaginatedEvents: React.FC = () => {
     const getAllEvents = async () => {
       setLoading(true);
       try {
-        const res = await axios.get(`https://causeconnect-dgu1.onrender.com//api/events?page=${page}&limit=5`, {
+        const res = await axios.get(`https://causeconnect-dgu1.onrender.com/api/events?page=${page}&limit=5`, {
           withCredentials: true,
         });
         setEvents(res.data.events); // Use `res.data.events` to access the events array
