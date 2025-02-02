@@ -57,7 +57,7 @@ const upload = multer({
 });
 
 // Protect all routes
-router.use(protectedRoute);
+// router.use(protectedRoute);
 
 router.route("/").post(upload.single('image'), createEvent).get(getAllEvents);
 
