@@ -17,6 +17,7 @@ import Footer from "./shared/Footer";
 import VolunteerPage from "./pages/VolunterPage";
 import ProtectedRoute from "./components/ProtectedRoute";
 import AboutUs from "./components/AboutUs";
+import BackToTop from "./shared/BackToTop";
 import LeaderBoard from "./pages/LeaderBoard";
 
 
@@ -44,6 +45,7 @@ const App: React.FC = () => {
         </Routes>
       </div>
       <Footer />
+      <BackToTop />
     </Router>
   );
 };
